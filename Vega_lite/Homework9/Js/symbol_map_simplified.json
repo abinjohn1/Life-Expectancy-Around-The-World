@@ -14,16 +14,16 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/data/earthquake.csv"
+        "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/2_symbol_map/data/life-expectancy.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
         "size": {
-          "field": "mag",
+          "field": "life expectancy",
           "type": "quantitative",
-          "scale": {"domain": [4, 8]}
+          "scale": {"domain": [15, 90]}
         },
         "color": {
           "field": "depth",
