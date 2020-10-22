@@ -18,7 +18,8 @@
           "type": "filter", "expr": "datum.Year =2019"
         },
         "key": "Entity",
-        "fields": ["Life expectancy"]
+        "fields": ["Life expectancy","Entity"]
+        
       }
     },
     {"calculate": "datum.Lifeexpectancy + 0.1", "as": "life expect"}
@@ -37,7 +38,7 @@
 "#fdbe85","#fe9929","#cc4c02"]}
     },
     "tooltip": [
-      {"field": "datum.code","type": "nominal", "title": "Country"},
+      {"field": "Entity","type": "nominal", "title": "Country"},
       {"field": "Life expectancy", "type": "quantitative"}
     ]
   }
