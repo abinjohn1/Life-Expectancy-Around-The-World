@@ -18,11 +18,11 @@
           "type": "filter", "expr": "datum.Year =2019"
         },
         "key": "Entity",
-        "fields": ["Life expectancy","Entity"]
+        "fields": ["Life_expectancy","Entity"]
         
       }
     },
-    {"calculate": "datum.Lifeexpectancy + 0.1", "as": "life expect"}
+    {"calculate": "datum.Life_expectancy + 0.1", "as": "life expect"}
   ],
   "projection": {
     "type": "naturalEarth1"
@@ -32,14 +32,14 @@
     },
   "encoding": {
     "color": {
-      "field": "Life expectancy",
+      "field": "Life_expectancy",
       "type": "quantitative",
       "scale": { "type": "threshold", "domain": [50,70,80], "range": ["#edf8e9",
 "#fdbe85","#fe9929","#cc4c02"]}
     },
     "tooltip": [
       {"field": "Entity","type": "nominal", "title": "Country"},
-      {"field": "Life expectancy", "type": "quantitative"}
+      {"field": "Life_expectancy", "type": "quantitative"}
     ]
   }
 
