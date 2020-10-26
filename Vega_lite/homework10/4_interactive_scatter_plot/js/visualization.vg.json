@@ -230,9 +230,9 @@
     {
       "scale": "x",
       "orient": "bottom",
+      "tickCount": 7,
       "gridScale": "y",
       "grid": true,
-      "tickCount": {"signal": "ceil(width/40)"},
       "domain": false,
       "labels": false,
       "aria": false,
@@ -244,9 +244,9 @@
     {
       "scale": "y",
       "orient": "left",
+      "tickCount": 7,
       "gridScale": "x",
       "grid": true,
-      "tickCount": {"signal": "ceil(height/40)"},
       "domain": false,
       "labels": false,
       "aria": false,
@@ -260,9 +260,9 @@
       "orient": "bottom",
       "grid": false,
       "title": "Year",
+      "tickCount": 7,
       "labelFlush": true,
       "labelOverlap": true,
-      "tickCount": {"signal": "ceil(width/40)"},
       "zindex": 0
     },
     {
@@ -270,8 +270,8 @@
       "orient": "left",
       "grid": false,
       "title": "Life_expectancy",
+      "tickCount": 7,
       "labelOverlap": true,
-      "tickCount": {"signal": "ceil(height/40)"},
       "zindex": 0
     }
   ],
