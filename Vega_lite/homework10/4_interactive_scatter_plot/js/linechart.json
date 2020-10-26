@@ -1,0 +1,72 @@
+
+{
+"$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+
+"width": 500,
+
+"height": 400,
+
+"title": "Life Expectancy around the world (1900-2019)",
+
+
+  "data": {"url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Data/life-expectancy.csv"},
+
+"params": [ { "name": "Year_Above", "value": 1900, "bind": { "input": "range", "min": 1899, "max": 2019,
+"step": 1, "name": "Year: " }}],
+
+
+"transform": [
+{"filter": "datum.Year>=Year_Above"},
+{"filter": "datum.Entity=='Japan'||datum.Entity=='Australia'||datum.Entity=='United Kingdom'||datum.Entity=='United States of America'||datum.Entity=='India'||datum.Entity=='Ethiopia'"}
+],
+
+"layer":[{
+
+"selection": { "country_highlight": { "type": "multi", "fields": ["Entity"], "bind": "legend" } },
+
+
+
+
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Year", "type": "quantitative"},
+
+
+    "y": {"field": "Life_expectancy", "type": "quantitative"},
+
+"color": { "field": "Entity", "type": "nominal",
+
+"scale": { "domain": [ "Japan", "Australia", "United Kingdom", "United States of America", "India", "Ethiopia" ], "range": [ "#e41a1c", "#984ea3", "#ff7f00", "#a6cee3", "#377eb8", "#a65628" ] } },
+"opacity": { "condition": {"selection": "country_highlight", "value": 0.6}, "value": 0.2},
+
+"tooltip": [ {"field": "Entity", "type": "nominal"},
+ {"field": "Year", "type": "quantitative", "format": ","}, 
+ {"field": "Life_expectancy", "type": "quantitative", "format": ",","title":"Life Expectancy" }]
+
+  }},
+
+{
+    "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -25,
+        "fontSize": 11.5,
+        "fontStyle": ""
+    },
+    "encoding": {
+        "text": {
+            "field": "Entity",
+            "type": "nominal"
+        },
+        "color": {
+            "value":  "#e41a1c"
+        },
+        "opacity": {
+            "condition": {
+                "test": " datum['Entity'] == 'Japan'",
+                "value": 1
+            },
+            "value": 0
+        }}
+}]}
