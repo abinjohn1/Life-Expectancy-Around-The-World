@@ -15,10 +15,10 @@
 
 <h1>Life Expectancy</h1>
 
-<h2>Life expectancy -2019</h2>
+<h2>Life expectancy around the world - 2019 </h2>
 <div id="choropleth_map"></div>
 
-<h2>Life Expectancy Through years</h2>
+<h2>Life expectancy Through Years</h2>
 <div id="line_plot"></div>
 
 <script type="text/javascript">
@@ -29,16 +29,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-
-
-  var spec2 = ""https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/homework10/4_interactive_scatter_plot/js/visualization.vl-2.json";
-  vegaEmbed('#symbol_map', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
-
-</body>
-</html>";
+  var vis2 = "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/homework10/4_interactive_scatter_plot/js/visualization.vg.json";
   
   vegaEmbed('#line_plot', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
