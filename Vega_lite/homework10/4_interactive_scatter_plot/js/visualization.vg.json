@@ -73,7 +73,7 @@
       "value": 1900,
       "bind": {
         "input": "range",
-        "min": 1899,
+        "min": 1900,
         "max": 2019,
         "step": 1,
         "name": "Year: "
@@ -244,7 +244,7 @@
     {
       "scale": "y",
       "orient": "left",
-      "tickCount": 7,
+      "tickCount": 5,
       "gridScale": "x",
       "grid": true,
       "domain": false,
@@ -270,7 +270,7 @@
       "orient": "left",
       "grid": false,
       "title": "Life_expectancy",
-      "tickCount": 7,
+      "tickCount": 5,
       "labelOverlap": true,
       "zindex": 0
     }
