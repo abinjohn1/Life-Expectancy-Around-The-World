@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "background": "white",
   "padding": 5,
-  "width": 500,
-  "height": 400,
+  "width": 600,
+  "height": 500,
   "title": {
     "text": "Life Expectancy around the world (1900-2019)",
     "frame": "group"
@@ -20,6 +20,16 @@
         {
           "type": "filter",
           "expr": "datum.Entity=='Japan'||datum.Entity=='Australia'||datum.Entity=='United Kingdom'||datum.Entity=='United States of America'||datum.Entity=='India'||datum.Entity=='Ethiopia'"
+        }
+      ]
+    },
+    {
+      "name": "data_0",
+      "source": "source_0",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "isValid(datum[\"Year\"]) && isFinite(+datum[\"Year\"]) && isValid(datum[\"Life_expectancy\"]) && isFinite(+datum[\"Life_expectancy\"])"
         }
       ]
     }
@@ -70,10 +80,10 @@
     },
     {
       "name": "Year_Above",
-      "value": 1900,
+      "value": 1550,
       "bind": {
         "input": "range",
-        "min": 1900,
+        "min": 1550,
         "max": 2019,
         "step": 1,
         "name": "Year: "
@@ -163,26 +173,32 @@
       "type": "text",
       "style": ["text"],
       "interactive": false,
-      "from": {"data": "source_0"},
+      "from": {"data": "data_0"},
       "encode": {
         "update": {
-          "align": {"value": "right"},
+          "align": {"value": "left"},
           "baseline": {"value": "middle"},
-          "dx": {"value": -25},
-          "fontSize": {"value": 11.5},
-          "fontStyle": {"value": ""},
-          "fill": {"value": "#e41a1c"},
+          "dx": {"value": 9},
+          "fontSize": {"value": 8},
+          "fontStyle": {"value": "Sanserif"},
+          "fill": {"value": "Black"},
           "opacity": [
-            {"test": " datum['Entity'] == 'Japan'", "value": 1},
+            {"test": "datum['Year']==2019 ", "value": 1},
             {"value": 0}
           ],
           "description": {
-            "signal": "\"Entity: \" + (isValid(datum[\"Entity\"]) ? datum[\"Entity\"] : \"\"+datum[\"Entity\"])"
+            "signal": "\"Year: \" + (format(datum[\"Year\"], \"\")) + \"; Life_expectancy: \" + (format(datum[\"Life_expectancy\"], \"\")) + \"; Code: \" + (isValid(datum[\"Code\"]) ? datum[\"Code\"] : \"\"+datum[\"Code\"])"
           },
-          "x": {"signal": "width", "mult": 0.5},
-          "y": {"signal": "height", "mult": 0.5},
+          "x": [
+            {
+              "test": "!isValid(datum[\"Year\"]) || !isFinite(+datum[\"Year\"])",
+              "value": 0
+            },
+            {"scale": "x", "field": "Year"}
+          ],
+          "y": {"scale": "y", "field": "Life_expectancy"},
           "text": {
-            "signal": "isValid(datum[\"Entity\"]) ? datum[\"Entity\"] : \"\"+datum[\"Entity\"]"
+            "signal": "isValid(datum[\"Code\"]) ? datum[\"Code\"] : \"\"+datum[\"Code\"]"
           }
         }
       }
@@ -192,7 +208,12 @@
     {
       "name": "x",
       "type": "linear",
-      "domain": {"data": "source_0", "field": "Year"},
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "Year"},
+          {"data": "data_0", "field": "Year"}
+        ]
+      },
       "range": [0, {"signal": "width"}],
       "nice": true,
       "zero": false
@@ -200,7 +221,12 @@
     {
       "name": "y",
       "type": "linear",
-      "domain": {"data": "source_0", "field": "Life_expectancy"},
+      "domain": {
+        "fields": [
+          {"data": "source_0", "field": "Life_expectancy"},
+          {"data": "data_0", "field": "Life_expectancy"}
+        ]
+      },
       "range": [{"signal": "height"}, 0],
       "nice": true,
       "zero": true
@@ -230,7 +256,7 @@
     {
       "scale": "x",
       "orient": "bottom",
-      "tickCount": 7,
+      "tickCount": 6,
       "gridScale": "y",
       "grid": true,
       "domain": false,
@@ -244,7 +270,7 @@
     {
       "scale": "y",
       "orient": "left",
-      "tickCount": 5,
+      "tickCount": 6,
       "gridScale": "x",
       "grid": true,
       "domain": false,
@@ -260,7 +286,7 @@
       "orient": "bottom",
       "grid": false,
       "title": "Year",
-      "tickCount": 7,
+      "tickCount": 6,
       "labelFlush": true,
       "labelOverlap": true,
       "zindex": 0
@@ -270,7 +296,7 @@
       "orient": "left",
       "grid": false,
       "title": "Life_expectancy",
-      "tickCount": 5,
+      "tickCount": 6,
       "labelOverlap": true,
       "zindex": 0
     }
@@ -315,113 +341,5 @@
       }
     }
   ],
-  "config": {
-    "projection": {"type": "equalEarth"},
-    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "width": 800,
-    "height": 500,
-    "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Js/ne_110m_admin_0_countries.topojson",
-          "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-        },
-        "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
-      },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Data/life-expectancy.csv"
-        },
-        "mark": {"type": "circle", "tooltip": {"content": "data"}},
-        "encoding": {
-          "longitude": {"field": "longitude", "type": "quantitative"},
-          "latitude": {"field": "latitude", "type": "quantitative"},
-          "size": {
-            "field": "life expectancy",
-            "type": "quantitative",
-            "scale": {"domain": [15, 90]}
-          },
-          "color": {
-            "field": "depth",
-            "type": "quantitative",
-            "scale": {"scheme": "reds"}
-          }
-        }
-      }
-    ],
-    "style": {
-      "group-title": {
-        "0": "E",
-        "1": "a",
-        "2": "r",
-        "3": "t",
-        "4": "h",
-        "5": "q",
-        "6": "u",
-        "7": "a",
-        "8": "k",
-        "9": "e",
-        "10": "s",
-        "11": " ",
-        "12": "o",
-        "13": "f",
-        "14": " ",
-        "15": "m",
-        "16": "a",
-        "17": "g",
-        "18": "n",
-        "19": "i",
-        "20": "t",
-        "21": "u",
-        "22": "d",
-        "23": "e",
-        "24": " ",
-        "25": "4",
-        "26": " ",
-        "27": "o",
-        "28": "r",
-        "29": " ",
-        "30": "l",
-        "31": "a",
-        "32": "r",
-        "33": "g",
-        "34": "e",
-        "35": " ",
-        "36": "b",
-        "37": "e",
-        "38": "t",
-        "39": "w",
-        "40": "e",
-        "41": "e",
-        "42": "n",
-        "43": " ",
-        "44": "4",
-        "45": " ",
-        "46": "O",
-        "47": "c",
-        "48": "t",
-        "49": " ",
-        "50": "2",
-        "51": "0",
-        "52": "2",
-        "53": "0",
-        "54": " ",
-        "55": "a",
-        "56": "n",
-        "57": "d",
-        "58": " ",
-        "59": "1",
-        "60": "0",
-        "61": " ",
-        "62": "O",
-        "63": "c",
-        "64": "t",
-        "65": " ",
-        "66": "2",
-        "67": "0",
-        "68": "2",
-        "69": "0"
-      }
-    }
-  }
+  "config": {}
 }
