@@ -19,6 +19,7 @@
 }
 }
 ],
+
 "transform": [
 {"filter": "datum.Year>=Year_Above"},
 {
@@ -27,7 +28,7 @@
 ],
 "encoding": {
 "x": {"field": "Year", "type": "quantitative",
-"axis": {"tickCount": 7}},
+"axis": {"tickCount":5,"grid":false}},
 "y": {"field": "Life_expectancy", "type": "quantitative",
 "axis": {"tickCount": 5}}},
 
@@ -39,6 +40,7 @@
 "type": "multi",
 "fields": ["Entity"],
 "bind": "legend"
+
 }
 },
 "mark": "line",
@@ -70,7 +72,7 @@
 }
 },
 "opacity": {
-"condition": {"selection": "country_highlight", "value": 0.6},
+"condition": {"selection": "country_highlight", "value": 0.7},
 "value": 0.2
 },
 "tooltip": [
@@ -106,4 +108,3 @@
 ],
 "config": {}
 }
-
