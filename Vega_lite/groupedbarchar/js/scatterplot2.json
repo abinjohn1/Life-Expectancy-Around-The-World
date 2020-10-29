@@ -1,1 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 600,
+  "height": 500,
+  "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
+  "fontSize":18,"font":"sans-serif",
+  "anchor":"middle"
+  },  
+  "data": {
+    "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/groupedbarchar/data/life-expectancy-of-women-vs-life-expectancy-of-women.csv"
+  },
 
+  "selection":{
+    "country_highlight": {
+"type": "multi",
+"fields": ["Entity"],
+"on":"mouseover"
+}},
+   "transform": [
+    {"filter": "datum.Year==2015"},
+     {"filter": "datum.life_expect_men!=''"}
+    
+  ],
+ "mark":"circle",
+ "encoding": {
+    "x": {
+      "field": "life_expect_men",
+      "type": "quantitative",
+      "title": "Life Expectancy",
+      "scale": {"domain": [45, 90]},
+      "axis": {"tickCount": 5}
+    },
+    "y": {
+      "field": "life_expect_women",
+      "type": "quantitative",
+      "title":"Health Expenditure Per Capita ($M)",
+      "scale": {"domain": [45, 90]},
+      
+      "axis": {"tickCount": 3, "grid": false}
+    },
+    "color":{"field":"Continent",
+    "legend":{}},
+    "size":{"field":"Total population (Gapminder, HYDE & UN)"},
+  "tooltip": [
+      {"field": "Entity","type": "nominal", "title": "Country"},
+      {"field": "life_expect_men", "type": "quantitative", "title": "Men"},
+      {"field": "life_expect_women", "type": "quantitative", "title": "Women"},
+      {"field": "Year", "type": "nominal"}
+    ],
+
+    "opacity":{ "condition": {"selection": "country_highlight", "value": 0.9}, "value": 0.2}
+    
+    },
+    "config": {"legend": {"disable": true},
+    "font":"sans-serif"}
+    }
+    
