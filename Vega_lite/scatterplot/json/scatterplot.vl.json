@@ -3,8 +3,8 @@
   "width": 600,
   "height": 500,
   "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
-  "fontSize":15,
-  "anchor":"start"
+  "fontSize":18,"font":"sans-serif",
+  "anchor":"middle"
   },  
   "data": {
     "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/scatterplot/data/life-expectancy-vs-healthcare-expenditure.csv"
