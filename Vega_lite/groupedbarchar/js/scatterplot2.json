@@ -18,7 +18,8 @@
 }},
    "transform": [
     {"filter": "datum.Year==2015"},
-     {"filter": "datum.life_expect_men!=''"}
+     {"filter": "datum.life_expect_men!=''"},
+     {"filter": "datum.Continent!=''"}
     
   ],
  "mark":"circle",
@@ -39,6 +40,7 @@
       "axis": {"tickCount": 3, "grid": false}
     },
     "color":{"field":"Continent",
+    "scale": { "domain": [ "North America", "South America", "Europe", "Africa", "Asia", "Oceania" ], "range": [ "#a6cee3", "#984ea3", "#ff7f00", "#e41a1c", "#377eb8", "#a65628" ] },
     "legend":{}},
     "size":{"field":"Total population (Gapminder, HYDE & UN)"},
   "tooltip": [
@@ -49,7 +51,7 @@
       {"field": "Continent", "type": "nominal"}
     ],
 
-    "opacity":{ "condition": {"selection": "country_highlight", "value": 0.9}, "value": 0.2}
+    "opacity":{ "condition": {"selection": "country_highlight", "value": 0.7}, "value": 0.01}
     
     },
     "config": {"legend": {"disable": true},
