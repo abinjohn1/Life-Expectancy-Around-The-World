@@ -3,7 +3,7 @@
   "width": 600,
   "height": 350,
   "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
-  "fontSize":18,"font":"sans-serif",
+  "font":"sans-serif",
   "anchor":"middle"
   },  
   "data": {
@@ -29,7 +29,7 @@
       "type": "quantitative",
       "title": "Life Expectancy",
       "scale": {"domain": [45, 90]},
-      "axis": {"tickCount": 5}
+      "axis": {"tickCount": 5,"grid": false}
     },
     "y": {
       "field": "life_expect_women",
@@ -57,5 +57,3 @@
     "config": {"legend": {"disable": true},
     "font":"sans-serif"}
     }
-    
-
