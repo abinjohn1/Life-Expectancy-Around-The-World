@@ -3,7 +3,7 @@
   "width": 550,
   "height": 350,
   "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
-  "fontSize":18,"font":"sans-serif",
+  "font":"sans-serif",
   "anchor":"middle"
   },  
   "data": {
