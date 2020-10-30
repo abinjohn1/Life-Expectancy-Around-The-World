@@ -41,7 +41,7 @@
     },
     "color":{"field":"Continent",
     "scale": { "domain": [ "North America", "South America", "Europe", "Africa", "Asia", "Oceania" ], "range": [ "#a6cee3", "#984ea3", "#ff7f00", "#e41a1c", "#377eb8", "#a65628" ] },
-    "legend":{}},
+     "legend": {"orient": ""}},
     "size":{"field":"Total population (Gapminder, HYDE & UN)"},
   "tooltip": [
       {"field": "Entity","type": "nominal", "title": "Country"},
