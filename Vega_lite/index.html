@@ -20,6 +20,11 @@
 	
 
     <style>
+	    body {
+			font-family: Sans-Serif;
+			
+		}
+	
         .mar20 {
             margin: 20px 0px;
         }
@@ -30,10 +35,11 @@
         }
 
         .heading {
-            text-align: center;
-            background-color: rgb(8, 31, 131);
+            text-align: left;
+            background-color:#F0B27A;
             padding: 20px;
-            color: #fff;
+            color: black;
+			
         }
 
         .head2 {
@@ -43,15 +49,16 @@
             font-weight: 500;
             margin-top: 30px;
             text-transform: capitalize;
-            background-color: rgb(64, 92, 218);
+            background-color:#F2F3F4;
             padding: 20px;
-            color: #fff;
+            color:Black;
         }
 
         .p_text {
             font-size: 15px;
+            margin-top: 20px;
             color: #090909d2;
-            text-justify: auto;
+           text-justify: auto;
         }
     </style>
 </head>
@@ -63,19 +70,27 @@
                 <div class="col-md-12">
                     <div class="heading">
                         <h1>
-                            Multiple Graphs Using Vega Lite Visualisations
+                            Life Expectancy Is Growing !
                         </h1>
                     </div>
                 </div>
             </div>
             <div class="row mar25">
                 <div class="col-md-12">
+				<div class="p_text" margin-top:20px;>
+				     <p>In order to access the population health, Life Expectancy is the key metric. Life expectancy seizures 
+				
+							<br>the mortality along the entire life course which is broader than the taper metric of infant and child
+							<br>mortality which emphasis merely at mortality at a young age.<br>
+							Furthermore, Life expectancy provides us information about the average age of death in a population.  
+							 </p>
+				</div>
                     <h3 class="head2">
-                        Life Expectancy Men vs Women
+                        Life Expectancy – 2019
                     </h3>
                 </div>
                 <div class="col-md-8 col-sm-6 col-xs-12">
-				<div id="choropleth_map"></div>
+				
                     <div class="map_img">
                        <script type="text/javascript">
   
@@ -88,46 +103,23 @@
 				</script>
 
                     </div>
+					<div id="choropleth_map"></div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="p_text">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                    </div>
-                </div>
+                
             </div>
             <div class="row mar25">
                 <div class="col-md-12">
                     <h3 class="head2">
-                        Life Expectancy vs Healthcare Expenditure
+                        Life Expectancy over the Years
 					</h3>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="p_text">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
-                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
-                            assumenda nobis numquam? Culpa.</p>
-                    </div>
-                </div>
+               
                 <div class="col-md-8 col-sm-6 col-xs-12">
 				<div id="scatter_plot"></div>
                     <div class="map_img">
                            <script type="text/javascript">
   
-							  var vis2 = "js/scatter_plot_interactive.vg.json";
+							  var vis2 = "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/homework10/4_interactive_scatter_plot/js/linechart.json";
 							  
 							  vegaEmbed('#scatter_plot', vis2).then(function(result) {
 								// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -135,20 +127,34 @@
 					      </script>
                     </div>
                 </div>
+				 <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="p_text">
+                        <p>
+The life expectancy for the listed countries on the graph has been increasing over the years expect Japan which had a downfall during  the year 1945 due to the world war 2 impact. 
+</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
+                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
+                            assumenda nobis numquam? Culpa.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
+                            voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
+                            assumenda nobis numquam? Culpa.</p>
+                    </div>
+                </div>
             </div>
             <div class="row mar25">
                 <div class="col-md-12">
                     <h3 class="head2">
-                        Life Expectancy Temporal 
+                        Life Expectancy vs Health Expenditure Per Capita
                     </h3>
                 </div>
                 <div class="col-md-8 col-sm-6 col-xs-12">
+                <div id="scatter_plot1"></div>
                     <div class="map_img">
                         <script type="text/javascript">
   
-							  var vis2 = "https://github.com/vega/vega-lite/blob/master/examples/specs/arc_params.vl.json";
+							  var vis2 = "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/scatterplot/json/scatterplot.vl.json";
 							  
-							  vegaEmbed('#scatter_plot', vis2).then(function(result) {
+							  vegaEmbed('#scatter_plot1', vis2).then(function(result) {
 								// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 							  }).catch(console.error);
 					      </script>
@@ -171,9 +177,23 @@
             <div class="row mar25">
                 <div class="col-md-12">
                     <h3 class="head2">
-                        Life Expectancy -2019
+                        Life Expectancy - Men Vs Women
                     </h3>
                 </div>
+                
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                 <div id="scatter_plot2"></div>
+                    <div class="map_img">
+                        <script type="text/javascript">
+  
+							  var vis2 = "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/groupedbarchar/js/scatterplot2.json";
+							  
+							  vegaEmbed('#scatter_plot2', vis2).then(function(result) {
+								// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+							  }).catch(console.error);
+					      </script>
+                    </div>
+                </div> 
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="p_text">
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat reiciendis esse natus aut,
@@ -186,21 +206,10 @@
                             voluptatibus itaque a voluptate, ipsa dicta animi deserunt nostrum velit qui officiis soluta
                             assumenda nobis numquam? Culpa.</p>
                     </div>
-                </div>
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <div class="map_img">
-                        <script type="text/javascript">
-  
-							  var vis2 = "js/scatter_plot_interactive.vg.json";
-							  
-							  vegaEmbed('#scatter_plot', vis2).then(function(result) {
-								// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-							  }).catch(console.error);
-					      </script>
-                    </div>
-                </div>                
+                </div>               
 
             </div>
+            
         </div>
     </div>
 
