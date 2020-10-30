@@ -2,58 +2,86 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 600,
   "height": 400,
-  "title":{"text":  "Life Expectancy Men Vs Women",
-  "font":"sans-serif",
-  "anchor":"middle"
-  },  
+  "title": {
+    "text": "Life Expectancy Men Vs Women",
+    "font": "sans-serif",
+    "anchor": "middle"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/groupedbarchar/data/life-expectancy-of-women-vs-life-expectancy-of-women.csv"
   },
-
-  "selection":{
+  "selection": {
     "country_highlight": {
-"type": "multi",
-"fields": ["Continent"],
-"bind": "legend"
-}},
-   "transform": [
+      "type": "multi",
+      "fields": ["Continent"],
+      "bind": "legend"
+    }
+  },
+  "transform": [
     {"filter": "datum.Year==2015"},
-     {"filter": "datum.life_expect_men!=''"},
-     {"filter": "datum.Continent!=''"}
-    
+    {"filter": "datum.life_expect_men!=''"},
+    {"filter": "datum.Continent!=''"}
   ],
- "mark":"circle",
- "encoding": {
+  "mark": "circle",
+  "encoding": {
     "x": {
       "field": "life_expect_men",
       "type": "quantitative",
       "title": "Life Expectancy",
       "scale": {"domain": [45, 90]},
-      "axis": {"tickCount": 5,"grid": false}
+      "axis": {"tickCount": 5, "grid": false}
     },
     "y": {
       "field": "life_expect_women",
       "type": "quantitative",
-      "title":"Health Expenditure Per Capita ($M)",
+      "title": "Health Expenditure Per Capita ($M)",
       "scale": {"domain": [45, 90]},
-      
       "axis": {"tickCount": 3, "grid": false}
     },
-    "color":{"field":"Continent",
-    "scale": { "domain": [ "North America", "South America", "Europe", "Africa", "Asia", "Oceania" ], "range": [ "#a6cee3", "#984ea3", "#ff7f00", "#e41a1c", "#377eb8", "#a65628" ] },
-     "legend": {"orient": ""}},
-    "size":{"field":"Total population (Gapminder, HYDE & UN)"},
-  "tooltip": [
-      {"field": "Entity","type": "nominal", "title": "Country"},
-      {"field": "life_expect_men", "type": "quantitative", "title": "Men", "format": ".2"},
-      {"field": "life_expect_women", "type": "quantitative", "format": ".2", "title": "Women"},
+    "color": {
+      "field": "Continent",
+      "scale": {
+        "domain": [
+          "North America",
+          "South America",
+          "Europe",
+          "Africa",
+          "Asia",
+          "Oceania"
+        ],
+        "range": [
+          "#a6cee3",
+          "#984ea3",
+          "#ff7f00",
+          "#e41a1c",
+          "#377eb8",
+          "#a65628"
+        ]
+      },
+      "legend": {"orient": "bottom-right"}
+    },
+    "size": {"field": "Total population (Gapminder, HYDE & UN)"},
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country"},
+      {
+        "field": "life_expect_men",
+        "type": "quantitative",
+        "title": "Men",
+        "format": ".2"
+      },
+      {
+        "field": "life_expect_women",
+        "type": "quantitative",
+        "format": ".2",
+        "title": "Women"
+      },
       {"field": "Year", "type": "nominal"},
       {"field": "Continent", "type": "nominal"}
     ],
-
-    "opacity":{ "condition": {"selection": "country_highlight", "value": 0.7}, "value": 0.01}
-    
-    },
-    "config": {"legend": {"disable": true},
-    "font":"sans-serif"}
+    "opacity": {
+      "condition": {"selection": "country_highlight", "value": 0.7},
+      "value": 0.01
     }
+  },
+  "config": {"legend": {"disable": true}, "font": "sans-serif"}
+}
