@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
-  "height": 500,
+  "width": 500,
+  "height": 350,
   "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
   "fontSize":18,"font":"sans-serif",
   "anchor":"middle"
