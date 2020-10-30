@@ -5,58 +5,54 @@
   "height": 450,
   "data": {
     "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Js/ne_110m_admin_0_countries.topojson",
-    "format": {
-          "type": "topojson",
-          "feature": "ne_110m_admin_0_countries"
-        }
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
   },
-    "selection":{
+  "selection": {
     "country_highlight": {
-"type": "multi",
-"fields": ["Life_expectancy"],
-"on":"mouseover"
-}},
- 
-  "transform": [{
+      "type": "multi",
+      "fields": ["Life_expectancy"],
+      "on": "mouseover"
+    }
+  },
+  "transform": [
+    {
       "lookup": "properties.NAME",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Data/life-expectancy.csv"
-           
         },
         "key": "Entity",
-        "fields": ["Life_expectancy","Entity"]
-        
+        "fields": ["Life_expectancy", "Entity"]
       }
     },
     
-  
-
     {"calculate": "datum.Life_expectancy + 0.1", "as": "life expect"}
   ],
-  "projection": {
-    "type": "naturalEarth1"
-  },
-  "mark": {
-    "type": "geoshape"
-    },
+  "projection": {"type": "naturalEarth1"},
+  "mark": {"type": "geoshape"},
   "encoding": {
-  
-
-
     "color": {
-      "field": "Life_expectancy",
+      "field": "Life_expectancy","title":"Life Expectancy",
       "type": "quantitative",
-      "scale": { "type": "threshold", "domain": [50,70,80], "range": ["#edf8e9",
-"#fdbe85","#fe9929","#cc4c02"]}
+      "legend":{"orient":"bottom-left"},
+      "scale": {
+        "type": "threshold",
+        "domain": [50, 70, 80],
+        "range": ["#edf8e9", "#fdbe85", "#fe9929", "#cc4c02"]
+      }
     },
+   
+  
+     
     "tooltip": [
-      {"field": "Entity","type": "nominal", "title": "Country"},
+      {"field": "Entity", "type": "nominal", "title": "Country"},
       {"field": "Life_expectancy", "type": "quantitative"}
     ],
-    "opacity": { "condition": {"selection": "country_highlight", "value": 0.9}, "value": 0.2}
+    "opacity": {
+      "condition": {"selection": "country_highlight", "value": 0.9},
+      "value": 0.2
+    }
+    
   }
-
-
-
+  
 }
