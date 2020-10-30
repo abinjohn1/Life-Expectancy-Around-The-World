@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 600,
-  "height": 375,
+  "height": 400,
   "title": "Life Expectancy around the world (1550-2019)",
   "data": {
     "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/Homework9/Data/life-expectancy.csv"
