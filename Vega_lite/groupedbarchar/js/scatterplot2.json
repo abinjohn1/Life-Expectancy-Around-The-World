@@ -3,7 +3,7 @@
   "width": 650,
   "height": 550,
   "title": {
-    "text": "Life Expectancy Men Vs Women",
+    "text": "Life Expectancy Men Vs Women – 2015",
     "font": "sans-serif",
     "anchor": "middle"
   },
@@ -27,14 +27,14 @@
     "x": {
       "field": "life_expect_men",
       "type": "quantitative",
-      "title": "Life Expectancy",
+      "title": " Men",
       "scale": {"domain": [45, 90]},
       "axis": {"tickCount": 5, "grid": false}
     },
     "y": {
       "field": "life_expect_women",
       "type": "quantitative",
-      "title": "Health Expenditure Per Capita ($M)",
+      "title": " Women",
       "scale": {"domain": [45, 90]},
       "axis": {"tickCount": 3, "grid": false}
     },
