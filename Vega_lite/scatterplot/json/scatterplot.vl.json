@@ -2,38 +2,17 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 650,
   "height": 550,
-  "title":{"text":  "Life Expectancy Vs Health Expenditure Per Capita",
-  
-  "anchor":"middle"
-  },  
+  "title": {
+    "text": "Life Expectancy Vs Health Expenditure Per Capita",
+    "anchor": "middle"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/abinjohn1/FIT3179/main/Vega_lite/scatterplot/data/life-expectancy-vs-healthcare-expenditure.csv"
   },
-  
   "transform": [
     {"filter": "datum.Life_expectancy>20"},
     {"filter": "datum.Health_Exp_per_capita!=''"}
   ],
- "encoding": {
-    "x": {
-      "field": "Life_expectancy",
-      "type": "quantitative",
-      "title": "Life Expectancy",
-      "scale": {"domain": [40, 90]},
-      "axis": {"tickCount": 5}
-    },
-    "y": {
-      "field": "Health_Exp_per_capita",
-      "type": "quantitative",
-      "title": "Health Expenditure Per Capita ($M)",
-      "scale": {"type": "log"},
-      "axis": {"tickCount": 3, "grid": false}
-    }},
-    
-
-"layer": [{
-
-  "mark": "circle",
   "encoding": {
     "x": {
       "field": "Life_expectancy",
@@ -48,52 +27,69 @@
       "title": "Health Expenditure Per Capita ($M)",
       "scale": {"type": "log"},
       "axis": {"tickCount": 3, "grid": false}
-    },
-    "color": {
-      "condition": {
-        "test": "datum.Entity=='Japan'||datum.Entity=='South Sudan'||datum.Entity=='Central African Republic'||datum.Entity=='Australia'||datum.Entity=='United States'||datum.Entity=='India'||datum.Entity=='Switzerland'||datum.Entity=='Afghanistan'||datum.Entity=='Iraq'||datum.Entity=='Oman'||datum.Entity=='China'||datum.Entity=='South Africa'||datum.Entity=='Cuba'||datum.Entity=='Ethiopia'",
-        "value": "red"},
-      "value": "lightgrey"
-    },
-    
-  
-  
-    "tooltip": [
-      {"field": "Entity", "type": "nominal"},
-      {
-        "field": "Health_Exp_per_capita",
-        "type": "quantitative",
-        "format": ".5",
-        "title": "Health Expenditure per Capita($m)"
-      },
-      {
-        "field": "Life_expectancy",
-        "type": "quantitative",
-        "format": ".2",
-        "title": "Life Expectancy"
-      }
-    ]
-  }
-  
-  },
-  {
-"mark": {
-"type": "text",
-"align": "left",
-"baseline": "middle",
-"dx": 4,
-"fontSize":12,
-"fontStyle": "italic"
-},
-"encoding": {
-"text": {"field": "Entity", "type": "nominal"},
-"color": {
-      "condition": {
-        "test": "datum.Entity=='Japan'||datum.Entity=='South Sudan'||datum.Entity=='Central African Republic'||datum.Entity=='Australia'||datum.Entity=='United States'||datum.Entity=='India'||datum.Entity=='Switzerland'||datum.Entity=='Afghanistan'||datum.Entity=='Iraq'||datum.Entity=='Oman'||datum.Entity=='China'||datum.Entity=='South Africa'||datum.Entity=='Cuba'||datum.Entity=='Ethiopia'",
-        "value":"grey"},
-      "value":""
     }
-}
-}
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "Life_expectancy",
+          "type": "quantitative",
+          "title": "Life Expectancy",
+          "scale": {"domain": [40, 90]},
+          "axis": {"tickCount": 5}
+        },
+        "y": {
+          "field": "Health_Exp_per_capita",
+          "type": "quantitative",
+          "title": "Health Expenditure Per Capita ($M)",
+          "scale": {"type": "log"},
+          "axis": {"tickCount": 3, "grid": false}
+        },
+        "color": {
+          "condition": {
+            "test": "datum.Entity=='Japan'||datum.Entity=='South Sudan'||datum.Entity=='Central African Republic'||datum.Entity=='Australia'||datum.Entity=='United States'||datum.Entity=='India'||datum.Entity=='Switzerland'||datum.Entity=='Afghanistan'||datum.Entity=='Iraq'||datum.Entity=='Oman'||datum.Entity=='China'||datum.Entity=='South Africa'||datum.Entity=='Cuba'||datum.Entity=='Ethiopia'",
+            "value": "red"
+          },
+          "value": "lightgrey"
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal","title":"Country"},
+          {
+            "field": "Health_Exp_per_capita",
+            "type": "quantitative",
+            "format": ".5",
+            "title": "Health Expenditure per Capita($m)"
+          },
+          {
+            "field": "Life_expectancy",
+            "type": "quantitative",
+            "format": ".2",
+            "title": "Life Expectancy"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 4,
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Entity", "type": "nominal"},
+        "color": {
+          "condition": {
+            "test": "datum.Entity=='Japan'||datum.Entity=='South Sudan'||datum.Entity=='Central African Republic'||datum.Entity=='Australia'||datum.Entity=='United States'||datum.Entity=='India'||datum.Entity=='Switzerland'||datum.Entity=='Afghanistan'||datum.Entity=='Iraq'||datum.Entity=='Oman'||datum.Entity=='China'||datum.Entity=='South Africa'||datum.Entity=='Cuba'||datum.Entity=='Ethiopia'",
+            "value": "grey"
+          },
+          "value": ""
+        }
+      }
+    }
   ]
 }
