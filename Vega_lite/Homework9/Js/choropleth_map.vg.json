@@ -25,25 +25,23 @@
         "fields": ["Life_expectancy", "Entity"]
       }
     },
-    
     {"calculate": "datum.Life_expectancy + 0.1", "as": "life expect"}
   ],
   "projection": {"type": "naturalEarth1"},
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
-      "field": "Life_expectancy","title":"Life Expectancy",
+      "field": "Life_expectancy",
+      "title": "Life Expectancy",
       "type": "quantitative",
-      "legend":{"orient":"bottom-left"},
+  
+      "legend": {"orient": "bottom-left"},
       "scale": {
         "type": "threshold",
         "domain": [50, 70, 80],
         "range": ["#edf8e9", "#fdbe85", "#fe9929", "#cc4c02"]
       }
     },
-   
-  
-     
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Country"},
       {"field": "Life_expectancy", "type": "quantitative"}
@@ -52,7 +50,10 @@
       "condition": {"selection": "country_highlight", "value": 0.9},
       "value": 0.2
     }
-    
+  },
+  "config": {
+  "view": {
+     "stroke": "transparent"
   }
-  
+}
 }
