@@ -44,7 +44,7 @@
         "country_highlight": {
           "type": "multi",
           "fields": ["Entity"],
-          "bind": "legend"
+          "on": "mouseover"
         }
       },
       "mark": "line",
