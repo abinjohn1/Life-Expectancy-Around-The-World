@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 650,
+  "width": 665,
   "height": 550,
   "title": {
     "text": "Life Expectancy Men Vs Women – 2015",
