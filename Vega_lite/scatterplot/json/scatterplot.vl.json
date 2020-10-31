@@ -82,7 +82,7 @@
 "align": "left",
 "baseline": "middle",
 "dx": 4,
-"fontSize":8,
+"fontSize":12,
 "fontStyle": "italic"
 },
 "encoding": {
@@ -90,7 +90,7 @@
 "color": {
       "condition": {
         "test": "datum.Entity=='Japan'||datum.Entity=='South Sudan'||datum.Entity=='Central African Republic'||datum.Entity=='Australia'||datum.Entity=='United States'||datum.Entity=='India'||datum.Entity=='Switzerland'||datum.Entity=='Afghanistan'||datum.Entity=='Iraq'||datum.Entity=='Oman'||datum.Entity=='China'||datum.Entity=='South Africa'||datum.Entity=='Cuba'||datum.Entity=='Ethiopia'",
-        "value":"#377eb8"},
+        "value":"grey"},
       "value":""
     }
 }
