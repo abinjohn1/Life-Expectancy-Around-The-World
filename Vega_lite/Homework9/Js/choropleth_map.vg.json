@@ -34,7 +34,6 @@
       "field": "Life_expectancy",
       "title": "Life Expectancy",
       "type": "quantitative",
-  
       "legend": {"orient": "bottom-left"},
       "scale": {
         "type": "threshold",
@@ -44,16 +43,12 @@
     },
     "tooltip": [
       {"field": "Entity", "type": "nominal", "title": "Country"},
-      {"field": "Life_expectancy", "type": "quantitative"}
+      {"field": "Life_expectancy", "type": "quantitative","title":"Life Expectancy"}
     ],
     "opacity": {
       "condition": {"selection": "country_highlight", "value": 0.9},
       "value": 0.2
     }
   },
-  "config": {
-  "view": {
-     "stroke": "transparent"
-  }
-}
+  "config": {"view": {"stroke": "transparent"}}
 }
