@@ -52,17 +52,19 @@
         "x": {
           "field": "Year",
           "type": "quantitative",
-          "axis": {"tickCount": 7}
+         "axis": {"tickCount": 5, "grid": false}
         },
         "y": {
           "field": "Life_expectancy",
           "title": "Life Expectancy",
           "type": "quantitative",
-          "axis": {"tickCount": 5}
+          "scale": {"domain": [20, 90]},
+      "axis": {"tickCount": 5,"grid":false}
         },
         "color": {
           "field": "Entity",
           "type": "nominal",
+          "legend":{"orient":"top-left","title":"Country"},
           "scale": {
             "domain": [
               "Japan",
@@ -97,25 +99,7 @@
           }
         ]
       }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 4,
-        "fontSize": 8,
-        "fontStyle": "sanserif"
-      },
-      "encoding": {
-        "text": {"field": "Code", "type": "nominal"},
-        "color": {"value": "grey"},
-        "opacity": {
-          "condition": {"test": " datum['Year'] == '2019'", "value": 1},
-          "value": 0
-        }
-      }
     }
-  ],
-  "config": {"legend": {"disable": true}}
+    
+  ]
 }
