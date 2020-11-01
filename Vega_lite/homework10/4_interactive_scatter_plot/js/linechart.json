@@ -59,12 +59,12 @@
           "title": "Life Expectancy",
           "type": "quantitative",
           "scale": {"domain": [20, 90]},
-      "axis": {"tickCount": 5,"grid":false}
+      "axis": {"tickCount": 5,"gridDash":[1],"gridOpacity":0.4}
         },
         "color": {
           "field": "Entity",
           "type": "nominal",
-          "legend":{"orient":"top-left","title":"Country"},
+          "legend":{"orient":"bottom","title":"Country","symbolStrokeWidth":3,"symbolSize":1700},
           "scale": {
             "domain": [
               "Japan",
