@@ -58,7 +58,7 @@
           "#a65628"
         ]
       },
-      "legend": {"orient": "bottom-right"}
+      "legend": {"orient": "top-left"}
     },
     "size": {"field": "Total population (Gapminder, HYDE & UN)"},
     "tooltip": [
