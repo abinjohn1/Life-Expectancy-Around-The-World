@@ -34,7 +34,7 @@
       "field": "Life_expectancy",
       "title": "Life Expectancy",
       "type": "quantitative",
-      "legend": {"orient": "bottom-left"},
+      "legend": {"orient": "top-left"},
       "scale": {
         "type": "threshold",
         "domain": [50, 70, 80],
